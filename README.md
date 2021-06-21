@@ -11,9 +11,9 @@ A interactive web app that is the clone of already available with the name "MICR
   1) Video Call One-to-one
   2) Video Call Conference
   3) Chat Feature
-  4) Voice Call One to one
-  5) Voice Call Conference
-  6) Screen share (if time permits)
+  4) Screen share 
+  5) Voice Call One to one(if time permits)
+  6) Voice Call Conference(if time permits)
   
 ## Table of Contents:
 
