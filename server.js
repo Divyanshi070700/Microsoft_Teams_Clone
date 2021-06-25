@@ -16,10 +16,10 @@ app.get('/' , (req,res)=>{
   // res.send("WELCOME");
   // res.redirect(`/${uuidv4()}`);  //CHNGES
 });
-app.get( '/', ( req, res ) => {
-  res.render( __dirname + '/views/index.ejs' );
-} );
-app.get('/:roomID' , (req,res)=>{
+// app.get( '/', ( req, res ) => {
+//   res.render( __dirname + '/views/index.ejs' );
+// } );
+app.get('/:room' , (req,res)=>{
     res.render('index' , {RoomId:req.params.room});
 });
 
