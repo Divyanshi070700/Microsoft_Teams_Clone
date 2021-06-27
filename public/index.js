@@ -8,15 +8,16 @@ var videoGrid = document.getElementById('video-grid')
 var myvideo = document.createElement('video');
 
 
-// start of new
+
 const showChat = document.querySelector("#showChat");
 const backBtn = document.querySelector(".header__back"); 
-// end of news
+
 
 myvideo.muted = true;
 
-const user = prompt("Enter your name");  //added
-//start of news
+const user = prompt("Enter your name") 
+
+
 backBtn.addEventListener("click", () => {
   document.querySelector(".main__left").style.display = "flex";
   document.querySelector(".main__left").style.flex = "1";
@@ -30,7 +31,7 @@ showChat.addEventListener("click", () => {
   document.querySelector(".main__left").style.display = "none";
   document.querySelector(".header__back").style.display = "block";
 });
-//end of news
+
 
 const peerConnections = {}
 navigator.mediaDevices.getUserMedia({
@@ -97,80 +98,10 @@ function addVideo(video , stream){
 
 
 
-// adding new things
-let text = document.querySelector("#chat_message");
-let send = document.getElementById("send");
-let messages = document.querySelector(".messages");
-
-send.addEventListener("click", (e) => {
-  if (text.value.length !== 0) {
-    socket.emit("message", text.value);
-    text.value = "";
-  }
-});
-
-text.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" && text.value.length !== 0) {
-    socket.emit("message", text.value);
-    text.value = "";
-  }
-});
-
-
-// added for chats start
-// addChat( data, senderType ) {
-//   let chatMsgDiv = document.querySelector( '#chat-messages' );
-//   let contentAlign = 'justify-content-end';
-//   let senderName = 'You';
-//   let msgBg = 'bg-white';
-
-//   if ( senderType === 'remote' ) {
-//       contentAlign = 'justify-content-start';
-//       senderName = data.sender;
-//       msgBg = '';
-
-//       this.toggleChatNotificationBadge();
-//   }
-
-//   let infoDiv = document.createElement( 'div' );
-//   infoDiv.className = 'sender-info';
-//   infoDiv.innerHTML = `${ senderName } - ${ moment().format( 'Do MMMM, YYYY h:mm a' ) }`;
-
-//   let colDiv = document.createElement( 'div' );
-//   colDiv.className = `col-10 card chat-card msg ${ msgBg }`;
-//   colDiv.innerHTML = xssFilters.inHTMLData( data.msg ).autoLink( { target: "_blank", rel: "nofollow"});
-
-//   let rowDiv = document.createElement( 'div' );
-//   rowDiv.className = `row ${ contentAlign } mb-2`;
-
-
-//   colDiv.appendChild( infoDiv );
-//   rowDiv.appendChild( colDiv );
-
-//   chatMsgDiv.appendChild( rowDiv );
-
-//   /**
-//    * Move focus to the newly added message but only if:
-//    * 1. Page has focus
-//    * 2. User has not moved scrollbar upward. This is to prevent moving the scroll position if user is reading previous messages.
-//    */
-//   if ( this.pageHasFocus ) {
-//       rowDiv.scrollIntoView();
-//   }
-// };
-// added for chat ends
 
 const inviteButton = document.querySelector("#inviteButton");
 const muteButton = document.querySelector("#muteButton");
 const stopVideo = document.querySelector("#stopVideo");
-
-//new added
-// const exitRoom = document.querySelector('#exitRoom');
-// exitRoom.addEventListener("click", () => {
-//   // process.exit(1);
-//   prompt("LEAVE BUTTON PRESSED");
-// });
-//new added ends
 
 muteButton.addEventListener("click", () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;
@@ -209,13 +140,39 @@ inviteButton.addEventListener("click", (e) => {
   );
 });
 
-socket.on("createMessage", (message, userName) => {
-  messages.innerHTML =
-    messages.innerHTML +
-    `<div class="message">
-        <b><i class="far fa-user-circle"></i> <span> ${
-          userName === user ? "me" : userName
-        }</span> </b>
-        <span>${message}</span>
-    </div>`;
-});
+
+
+
+const messageContainer = document.getElementById('chatting')
+const messageForm = document.getElementById('send-container')
+const messageInput = document.getElementById('chat_message')
+appendMessage('You Joined')
+
+socket.on('chat-message',(data) => {
+  // console.log(data)
+  // appendMessage(`${data.user}: ${data.message}`)
+  appendMessage(`Anonymous: ${data.message}`)
+})
+socket.on('User-connected',user => {
+  // console.log(data)
+  // appendMessage(`User with id = ${user} connected`)
+  appendMessage(`A new User connected`)
+})
+socket.on('userDisconnect',user => {
+  // console.log(data)
+  // appendMessage(`User with id = ${user} disconnected`)
+  appendMessage(`One User disconnected`)
+})
+messageForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+  const message = messageInput.value
+  appendMessage(`You: ${message}`)
+  socket.emit('send-chat-message',message)
+  messageInput.value = ''
+})
+
+function appendMessage(message){
+  const messageElement = document.createElement('div')
+  messageElement.innerText = message
+  messageContainer.append(messageElement)
+}
