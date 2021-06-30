@@ -18,6 +18,26 @@
   <body>
     <div id="videoDiv">
        <!-- <p>hello user</p> -->
+       <!-- startxyz -->
+    <!-- <div class="custom-modal" id='recording-options-modal'>
+      <div class="custom-modal-content">
+          <div class="row text-center">
+              <div class="col-md-6 mb-2">
+                  <span class="record-option" id='record-video'>Record video</span>
+              </div>
+              <div class="col-md-6 mb-2">
+                  <span class="record-option" id='record-screen'>Record screen</span>
+              </div>
+          </div>
+
+          <div class="row mt-3">
+              <div class="col-md-12 text-center">
+                  <button class="btn btn-outline-danger" id='closeModal'>Close</button>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  <!-- endxyz -->
        <!-- new added -->
        <div class="header">
         <div class="logo">
@@ -29,35 +49,50 @@
       </div>  
       <div class="main">  
       <div class="main__left">
-        <div class="videos__group">
-          <div id="video-grid">
+        <div class="videos__group " >
+          <div class="mirror-mode" id="video-grid">
             <!-- <video></video>  -->
-            <!-- added extra -->
           </div>
         </div>
         <div class="options">
           <div class="options__left">
-            <div id="stopVideo" class="options__button">
+            <div id="stopVideo" class="options__button"  title="Video">
               <i class="fa fa-video-camera"></i>
             </div>
-            <div id="muteButton" class="options__button">
+            <div id="muteButton" class="options__button" title="Audio">
               <i class="fa fa-microphone"></i>
             </div>
-            <div id="showChat" class="options__button">
+            <div id="showChat" class="options__button" title="Show Chat">
               <i class="fa fa-comment"></i>
             </div>
-            <div id="leavemeet" class="options__button">
-              <!-- <button type="button">Leave</button> -->
+            <div id="leavemeet" class="options__button" title="Leave Meet">
               <button class="button button" >
-                <!-- Leave -->
-                <!-- <a href="/Login" class="text-white text-decoration-none">Leave</a> -->
+                <!-- LEAVE BUTTON -->
                 <a href="/newroom" class="text-white text-decoration-none"><i class="fas fa-phone-slash" title="Leave"></i></a>
               </button>
-              
             </div>
+            <!-- SCREEN SHARING  -->
+            <div class="room-comm options__button" id="screenshare">
+              <button class="btn btn-sm rounded-0 btn-no-effect" id='share-screen' title="Share">
+                <i class="fa fa-desktop "></i>
+              </button>
+            </div>
+            <!-- TRY FOR RECORD -->
+            <!-- <video id="video" autoplay></video> -->
+            <!-- <div class="room-comm">
+              <button class="btn btn-sm rounded-0 btn-no-effect" id='record' title="Record">
+                <i class="fa fa-dot-circle text-white"></i>
+              </button>
+            </div> -->
+            <!-- <div id="sharescreen" class="options__button" title="Share your Screen">
+              <i class="fa fa-desktop text-white"></i>
+            </div>
+            <div id="recordscreen" class="options__button" title="Record">
+              <i class="fa fa-dot-circle text-white"></i>
+            </div> -->
           </div>
 
-          <!-- CHAT ACTION IMMPLEMENTATION -->
+          <!-- CHAT ACTION IMPLEMENTATION -->
           <div class="options__right">
             <div id="inviteButton" class="options__button">
               <i class="fas fa-user-plus"></i>
@@ -71,13 +106,6 @@
   
             </div>
         </div>
-        <!-- old added -->
-        <!-- <div class="main__message_container" id="chatting">
-          <input id="chat_message" type="text" autocomplete="off" placeholder="Type message here...">
-          <div id="send" class="options__button">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-          </div>
-        </div> -->
         <div class="main_message_container" id="chatting"></div>
         <form id="send-container">
           <input type="text" id="chat_message" placeholder="Type message here...">
@@ -87,5 +115,6 @@
     </div>
        <!-- end new added -->
     </div>
+    
   </body>
 </html>
