@@ -54,15 +54,15 @@ Heroku.com
 * Link the Heroku account to git repository
 * This will generate the url where your app is running
 * Click on the url.
-* Congrats!! You are done. 
+* Congrats!! You are done. <br />
 Some of the references used to Deploy the Web-App:
-* https://devcenter.heroku.com/articles/node-websockets
-* https://www.youtube.com/watch?v=MxfxiR8TVNU&t=311s
+1) https://devcenter.heroku.com/articles/node-websockets
+2) https://www.youtube.com/watch?v=MxfxiR8TVNU&t=311s
 
 ## Link and Steps to run the deployed App :
 Link:
   https://vast-shore-44600.herokuapp.com/
-Steps:
+<br />Steps:
 * Open the link in your browser.
 * You will get unique key on screen, add it to the link. Eg: "link/unique_key".
 * Share this unique link with your friends with whom you want to talk.
