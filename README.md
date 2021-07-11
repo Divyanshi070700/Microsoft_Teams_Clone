@@ -32,6 +32,17 @@ A interactive web app that is the clone of an application already available with
   * NodeJs 
   * webRtc(peer.js)
 
+## Agile Methodology  Implementation
+  | Sprint Week | Bugs and Deliverables |
+  |---|---|
+  | Sprint 1 | Designed the Solution,planned the deadlines,researched for the libraries and APIs , got them reviewd by the mentors. |
+  |---|---|
+  | Sprint 2 | Implmented the Basic minimal feature required with basic UI along with some other features like audio and video on/off.Received the feedback from the Mentors to improve the UI and add more  features.|
+  |---|---|
+  | Sprint 3 | Improved the UI as suggested by mentors, added some more features like Chat and Screen Share. Got the feedback to work on documentations and improving code quality.|
+  |---|---|
+  | Sprint 4 |Improved the UI, README.md and added comments to the code wherever required.Also added a new feature to record screen and video.|
+
 ## Demo link of the project
 (Youtube link will be added here)
 
