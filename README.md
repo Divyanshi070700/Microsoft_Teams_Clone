@@ -44,7 +44,7 @@ A interactive web app that is the clone of an application already available with
   | Sprint 4 |Improved the UI, README.md and added comments to the code wherever required.Also added a new feature to record screen and video.|
 
 ## Demo link of the project
-(Youtube link will be added here)
+  https://youtu.be/MCWdXRDIJ8c
 
 ## Resources used in making the WebApp:
   Some of the references used for implementation of this Web App are:
@@ -65,7 +65,7 @@ A interactive web app that is the clone of an application already available with
 * Congrats!! You managed to run webapp on your local system.
 
 ## Platform Used to deploy the WebApp:
-Heroku.com
+  Heroku.com
 
 ## Steps to deploy:
 * All you need is an account on heroku
